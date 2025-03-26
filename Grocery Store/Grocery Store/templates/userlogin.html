@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<head>
+	<title>User Login</title>
+  <h5>Enter Your Login Details</h5>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/userlogin.css') }}">
+
+</head>
+
+<form method="post" action="{{ url_for('userlogin') }}">
+    <label for="nm">Username:</label>
+    <input type="text" name="nm" id="uname" required>
+    <br>
+    <label for="pw">Password:</label>
+    <input type="password" name="pw" id="pass" required>
+    <br>
+    <div class="text-center">
+      <input type="submit" value="Sign In" id="sub">
+    </div>
+</form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base2.html" %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Cart</h1>
+        {% if cart_items %}
+            <ul class="content-list">
+                {% set total_amount = [] %}  {# Initialize the total_amount variable #}
+                {% for item in cart_items %}
+                    <li>
+                        <h4>Product: {{ item.name }}</h4>
+                        <p>Price: {{ item.price }}</p>
+                        <p>Quantity: {{ item.quantity }}</p>
+                        <p>Total: {{ item.total }}</p>
+                        <form method="POST" action="{{ url_for('update_cart_item', product_id=item.product_id) }}" >
+                            <label for="quantity">Edit Quantity:</label>
+                            <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+                            <button type="submit" class="btn btn-update">Update Quantity</button>
+                        </form>
+                        <form method="POST" action="{{ url_for('delete_cart_item', item_id=item.product_id) }}">
+                            <button type="submit" class="btn btn-delete">Delete Item</button>
+                        </form>
+                        
+                    </li>
+                    {% set total_amount = total_amount.append(item.total) %} {# Calculate the total amount #}
+                {% endfor %}
+            </ul>
+            <p>Total Amount: {{ total_amount|sum}}</p> {# Display the total amount #}
+            {% if total_amount|sum > 0 %}
+            <form method="POST" action="{{ url_for('buy_products') }}">
+                <button type="submit" class="btn">Buy Products</button>
+            </form>
+            {% endif %}
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+        <a href="{{ url_for('userhome') }}">Back to Home</a>
+    </div>
+</body>
+
+
+{% endblock %}

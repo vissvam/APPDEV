@@ -1,0 +1,50 @@
+{% extends "base1.html" %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/adminproducts.css') }}">
+</head>
+
+<body>
+    <div class="container d-flex flex-wrap">
+        {% if not products %}
+        <p style="font-size: 50px; color: red;">No products to display</p>
+        {% else %}
+        <h3>Products under {{ category.C_name }}</h3>
+        {% for product in products %}
+        <div class="card mx-3 my-3" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title" id="cardProductName">{{ product.P_name }}</h4>
+                <p class="card-text">Unit: {{ product.unit }}</p>
+                <p class="card-text">Price per Unit: {{ product.price_per_unit }}</p>
+                <p class="card-text">Manufacture/Expiry Date: {{ product.manf_exp_Date }}</p>
+                <p class="card-text">Quantity available: {{ product.avable_qunty }}</p>
+                <!-- Add any other product details you want to display -->
+
+                <!-- Flex container for the buttons -->
+                <div class="d-flex justify-content-between">
+                    <!-- Edit button to redirect to the editproduct endpoint -->
+                    <form action="{{ url_for('editproduct', product_id=product.P_ID) }}" method="post">
+                        <button type="submit" class="btn btn-info">Edit</button>
+                    </form>
+
+                    <!-- Delete button -->
+                    <form action="{{ url_for('deleteproduct', product_id=product.P_ID) }}" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- New card for adding a new product -->
+        <div class="card mx-3 my-3add-product-card d-flex justify-content-center align-items-center" style="width: 18rem;">
+          <div class="card-body">
+            <h4 class="card-title">Add a new product</h4>
+            <div class="text-center">
+              <a href="{{ url_for('addproduct', category_id=category.C_ID) }}" class="btn btn-primary">Add product</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

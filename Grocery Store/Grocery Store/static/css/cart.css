@@ -1,0 +1,84 @@
+/* cart.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content-list li {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f3bfbf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin: 5px 0;
+}
+
+
+
+
+
+/* ... previous CSS rules ... */
+
+/* Custom styles for Update button */
+.btn-update {
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.btn-update:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Custom styles for Delete button */
+.btn-delete {
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Darker red color on hover */
+}
+
+/* ... remaining CSS rules ... */
+

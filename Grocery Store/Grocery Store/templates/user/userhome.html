@@ -1,0 +1,31 @@
+{% extends "base2.html" %}
+{% block content %}
+
+<head>
+    <title>Categories</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/categories.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/userhome.css') }}">
+
+</head>
+<body>
+    <p class="welcome">Welcome {{ user }},shop by category</p>
+    <div class="container d-flex flex-wrap">
+        {% if not all_categories %}
+            <p style="font-size: 50px; color: red;">No categories to display</p>
+        {% else %}
+            {% for category in all_categories %}
+                <div class="card mx-5 my-3 fluid" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title" id="categoryname">{{ category.C_name }}</h4>
+                        <!-- Add any additional details you want to display for each category -->
+                        <a href="{{ url_for('viewproducts', category_id=category.C_ID,user=user) }}" class="btn btn-primary">View Products</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+
+{% endblock %}
+
+

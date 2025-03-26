@@ -1,0 +1,56 @@
+{% extends "base1.html" %}
+
+{% block content %}
+
+<head>
+  <h5>Category List</h5>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/categories.css') }}">
+</head>
+<body>
+    <div class="container row co-md-8 d-flex flex-wrap">
+      
+      {% if not all %}
+        <p style="font-size: 50px; color: red;">No categories to display</p>
+      {% else %}
+        {% for row in all %} 
+          <div class="card mx-4 my-4" style=width:18rem>
+            <div class="card-body">
+              <h4 class="card-title" id="categoryname">
+                <a href="{{ url_for('view_category_products', category_id=row.C_ID) }}">{{ row.C_name }}</a>
+              </h4>
+              <div class="text-center">
+                <form action="{{ url_for('viewcategories') }}" method="post" >
+                <a href="{{ url_for('editcategory', category=row.C_name) }}" class="btn btn-primary">Edit</a>
+                <button type="submit" form="deleteForm" name="CategoryNameToDelete" value="{{ row.C_name }}" class="btn btn-primary">Delete</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <!-- New card for adding a new category -->
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card mx-3 my-3" style="width: 18rem;">
+          <div class="card-body">
+            <h4 class="card-title">Add a new category</h4>
+            <div class="text-center">
+              <form action="{{ url_for('addcategory') }}" method="post">
+                <input type="text" name="NewCategoryName" placeholder="New Category Name">
+                <button type="submit" class="btn btn-primary">Add Category</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+<!-- Add a hidden form to handle category name deletion -->
+<form id="deleteForm" action="{{ url_for('viewcategories') }}" method="post" style="display: none;">
+  <input type="hidden" name="CategoryNameToDelete" value="">
+</form>
+
+{% endblock %}

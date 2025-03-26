@@ -1,0 +1,15 @@
+{% extends "base1.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/adminhome.css') }}">
+</head>
+<body>
+    <h5>Welcome Admin</h5>
+    <div class="container" id="options">
+        <a href="{{ url_for('viewcategories', category_id=category.C_ID) }}" class="btn btn-primary">view categories</a>
+    </div>
+</body>
+{% endblock %}

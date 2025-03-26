@@ -1,0 +1,26 @@
+/* Adjust the padding for the navigation links to prevent widening */
+.navbar-nav {
+  padding-right: 20px;
+}
+
+/* Style for the search form */
+.search-form {
+  margin-left: auto; /* Push the search form to the right */
+}
+
+/* Add margin to the search form elements for spacing */
+.search-form input[type="number"],
+.search-form button {
+  margin: 0 5px;
+}
+.searchbtn {
+  display:flex;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}

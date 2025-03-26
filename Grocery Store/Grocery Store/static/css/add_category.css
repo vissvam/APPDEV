@@ -1,0 +1,47 @@
+h5 {
+    font-size: 32px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    }
+    #movieform {
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    }
+    
+    form input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #ccc;
+    font-size: 16px;
+    }
+    
+    select.selectpicker {
+    margin: 10px 0;
+    width: 100%;
+    }
+    
+    button.btn-primary {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    }
+    
+    button.btn-primary:hover {
+    background-color: #0069d9;
+    }
+    

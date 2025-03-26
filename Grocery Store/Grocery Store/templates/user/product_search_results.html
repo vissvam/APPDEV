@@ -1,0 +1,13 @@
+{% extends "base2.html" %}
+
+{% block content %}
+<h1>Product Search Results</h1>
+
+<ul>
+    {% for product in products %}
+    <li>{{ product.P_name }} - {{ product.price_per_unit }} </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

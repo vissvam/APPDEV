@@ -1,0 +1,52 @@
+{% extends "base1.html" %}
+{% block content %}
+
+<head>
+  <title>ADD PRODUCT</title>
+  <!-- Add any additional CSS or JS files if needed -->
+</head>
+
+<div class="container">
+    <h3>Add New Product</h3>
+    <form method="POST" action="{{ url_for('addproduct', category_id=category_id) }}">
+        <div class="form-group">
+            <label for="category_id">Category</label>
+            <select class="form-control" id="category_id" name="category_id" required>
+                {% for category in categories %}
+                <option value="{{ category.C_ID }}">{{ category.C_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="product_name">Product Name</label>
+            <input type="text" class="form-control" id="product_name" name="product_name" required>
+        </div>
+        <div class="form-group">
+            <label for="unit">Unit</label>
+            <input type="text" class="form-control" id="unit" name="unit">
+        </div>
+        <div class="form-group">
+            <label for="price_per_unit">Price per Unit</label>
+            <input type="number" class="form-control" id="price_per_unit" name="price_per_unit" required>
+        </div>
+        <div class="form-group">
+            <label for="manf_exp_date">Manufacture/Expiry Date</label>
+            <input type="text" class="form-control" id="manf_exp_date" name="manf_exp_date">
+        </div>
+        <div class="form-group">
+            <label for="umo_id">Unit of Measurement</label>
+            <select class="form-control" id="umo_id" name="umo_id" required>
+                {% for uom in units_of_measurement %}
+                <option value="{{ uom.uom_id }}">{{ uom.uom_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="avable_qunty">Quantity available</label>
+            <input type="number" class="form-control" id="avable_qunty" name="avable_qunty">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+    </form>
+</div>
+
+{% endblock %}

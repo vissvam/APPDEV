@@ -1,0 +1,39 @@
+h5{
+    font-size: 32px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    }
+form {
+    max-width: 400px;
+    margin: 60px auto;
+}
+label {
+    display: block;
+    margin-bottom: 10px; 
+}
+#uname,#pass {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#sub {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#sub:hover {
+    background-color: #45a049;
+}
+p {
+    margin-top: 10px;
+    text-align: center;
+}

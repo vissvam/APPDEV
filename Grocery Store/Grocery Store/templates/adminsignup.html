@@ -1,0 +1,29 @@
+{%extends "base.html" %}
+{% block content %}
+
+<head>
+	<title>ADMIN SIGN UP</title>
+    <h5>Create an Admin Account</h5>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/userlogin.css') }}">
+
+</head>
+
+<form method="post" action="{{ url_for('adminsignup') }}">
+    <label for="nm">Username:</label>
+    <input id="uname" type="text" name="nm" required>
+    <br>
+    <label for="pw">Password:</label>
+    <input id="pass" type="password" name="pw" required>
+    <br>
+    <div class="text-center">
+        <input id="sub" type="submit" value="Sign up">
+    </div>
+</form>
+
+{% if message %}
+  <script>
+    alert("{{ message }}");
+  </script>
+{% endif %}
+
+{%endblock%}

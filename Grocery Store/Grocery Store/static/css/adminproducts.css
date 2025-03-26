@@ -1,0 +1,56 @@
+/* adminproducts.css */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    width: 18rem;
+    margin: 0 10px 10px 0;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+#cardProductName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 5px;
+}
+
+.btn-primary,
+.btn-danger {
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger:hover {
+    background-color: #d9534f;
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divider-line {
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    width: 50%;
+}
+
+.add-product-card {
+    margin: 0 10px 10px 0;
+}

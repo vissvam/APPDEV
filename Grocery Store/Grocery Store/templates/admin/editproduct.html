@@ -1,0 +1,31 @@
+{% extends "base1.html" %}
+{% block content %}
+
+<h5>Edit Product</h5>
+
+<form method="POST">
+  <div class="form-group">
+    <label for="productName">Product Name</label>
+    <input type="text" class="form-control" id="productName" name="NewProductName" value="{{ product.P_name }}">
+  </div>
+  <div class="form-group">
+    <label for="unit">Unit</label>
+    <input type="text" class="form-control" id="unit" name="unit" value="{{ product.unit }}">
+  </div>
+  <div class="form-group">
+    <label for="pricePerUnit">Price per Unit</label>
+    <input type="number" class="form-control" id="pricePerUnit" name="price_per_unit" value="{{ product.price_per_unit }}">
+  </div>
+  <div class="form-group">
+    <label for="manfExpDate">Manufacture/Expiry Date</label>
+    <input type="text" class="form-control" id="manfExpDate" name="manf_exp_date" value="{{ product.manf_exp_Date }}">
+  </div>
+  <div class="form-group">
+    <label for="avableQunty">Quantity available</label>
+    <input type="number" class="form-control" id="avableQunty" name="avable_qunty" value="{{ product.avable_qunty }}">
+  </div>
+  <!-- Add any other product details you want to edit -->
+  <button type="submit" class="btn btn-primary">Update Product</button>
+</form>
+
+{% endblock %}

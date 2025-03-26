@@ -1,0 +1,32 @@
+{%extends "base.html" %}
+{% block content %}
+
+<head>
+	<title>LOGIN</title>
+  <h5>Admin Login Details</h5>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/userlogin.css') }}">
+</head>
+<body>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+    <form method="post" action="{{ url_for('adminlogin') }}">
+      <label for="nm">Username:</label>
+      <input id="uname" type="text" name="nm" >
+      <br>
+      <label for="pw">Password:</label>
+      <input id="pass" type="password" name="pw" >
+      <br>
+      <div class="text-center">
+        <input id="sub" type="submit" value="Sign In">
+      </div>
+    </form>
+</body>
+
+{% if message %}
+  <script>
+    alert("{{ message }}");
+  </script>
+{% endif %}
+
+{%endblock%}
